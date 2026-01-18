@@ -7,3 +7,4 @@ src-git qmodem https://github.com/FUjr/QModem.git;main
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small
 src-git rtp https://github.com/xuanranran/openwrt-rtp2httpd
+src-git easytier https://github.com/EasyTier/luci-app-easytier.git
