@@ -6,9 +6,12 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/firmware/qca-wireless.git
-PKG_SOURCE_DATE:=2025-12-16
-PKG_SOURCE_VERSION:=10eddd6f1cbabd1972a71526d979033325f958c6
-PKG_MIRROR_HASH:=1fd55a5cf582f131a371d70de5919b7e54c6ecdc078991dd8a2d21469976c12f
+PKG_SOURCE_DATE:=2025-11-15
+PKG_SOURCE_VERSION:=7c6b7545f69a3ef3ddaaff68fc97e9e172117e2e
+PKG_MIRROR_HASH:=ac77840bafd111b3cc3d6cfc7a3b770fdaabb929209c38cd2109be2efd575dae
+PKG_SOURCE_DATE:=2026-01-07
+PKG_SOURCE_VERSION:=11715a4fe783425625a061618e7caa5c56b03323
+PKG_MIRROR_HASH:=c8e2d70045a10350671645863bc93019629399c4ed9c211ae6071895188fb958
 PKG_FLAGS:=nonshared
 
 include $(INCLUDE_DIR)/package.mk
@@ -60,6 +63,7 @@ ALLWIFIBOARDS:= \
 	linksys_spnmx56 \
 	linksys_whw03 \
 	meraki_mr30h \
+	meraki_underdog \
 	meraki_z3 \
 	netgear_lbr20 \
 	netgear_rax120v2 \
@@ -81,6 +85,7 @@ ALLWIFIBOARDS:= \
 	tplink_deco-x80-5g \
 	tplink_eap610-outdoor \
 	tplink_eap620hd-v1 \
+	tplink_eap623od-hd-v1 \
 	tplink_eap623-outdoor-hd-v1 \
 	tplink_eap625-outdoor-hd-v1 \
 	tplink_eap660hd-v1 \
@@ -106,6 +111,8 @@ ALLWIFIBOARDS:= \
 	zte_mf287plus \
 	zyxel_nbg7815 \
 	zyxel_nwa210ax
+	zyxel_nwa210ax \
+	zyxel_scr50axe
 
 ALLWIFIPACKAGES:=$(foreach BOARD,$(ALLWIFIBOARDS),ipq-wifi-$(BOARD))
 
@@ -241,6 +248,7 @@ $(eval $(call generate-ipq-wifi-package,linksys_mx8500,Linksys MX8500))
 $(eval $(call generate-ipq-wifi-package,linksys_spnmx56,Linksys SPNMX56))
 $(eval $(call generate-ipq-wifi-package,linksys_whw03,Linksys WHW03))
 $(eval $(call generate-ipq-wifi-package,meraki_mr30h,Meraki MR30H))
+$(eval $(call generate-ipq-wifi-package,meraki_underdog,Meraki underdog))
 $(eval $(call generate-ipq-wifi-package,meraki_z3,Meraki Z3))
 $(eval $(call generate-ipq-wifi-package,netgear_lbr20,Netgear LBR20))
 $(eval $(call generate-ipq-wifi-package,netgear_rax120v2,Netgear RAX120v2))
@@ -262,6 +270,7 @@ $(eval $(call generate-ipq-wifi-package,spectrum_sax1v1k,Spectrum SAX1V1K))
 $(eval $(call generate-ipq-wifi-package,tplink_deco-x80-5g,TP-Link Deco X80-5G))
 $(eval $(call generate-ipq-wifi-package,tplink_eap610-outdoor,TPLink EAP610-Outdoor))
 $(eval $(call generate-ipq-wifi-package,tplink_eap620hd-v1,TP-Link EAP620 HD v1))
+$(eval $(call generate-ipq-wifi-package,tplink_eap623od-hd-v1,TP-Link EAP623-Outdoor HD v1))
 $(eval $(call generate-ipq-wifi-package,tplink_eap623-outdoor-hd-v1,TP-Link EAP623-Outdoor HD v1))
 $(eval $(call generate-ipq-wifi-package,tplink_eap625-outdoor-hd-v1,TP-Link EAP625-Outdoor HD v1))
 $(eval $(call generate-ipq-wifi-package,tplink_eap660hd-v1,TP-Link EAP660 HD v1))
@@ -287,5 +296,6 @@ $(eval $(call generate-ipq-wifi-package,zte_mf287,ZTE MF287))
 $(eval $(call generate-ipq-wifi-package,zte_mf287plus,ZTE MF287Plus))
 $(eval $(call generate-ipq-wifi-package,zyxel_nbg7815,Zyxel NBG7815))
 $(eval $(call generate-ipq-wifi-package,zyxel_nwa210ax,Zyxel NWA210AX))
+$(eval $(call generate-ipq-wifi-package,zyxel_scr50axe,Zyxel SCR50AXE))
 
 $(foreach PACKAGE,$(ALLWIFIPACKAGES),$(eval $(call BuildPackage,$(PACKAGE))))
