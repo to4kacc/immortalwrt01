@@ -53,8 +53,8 @@ define Package/kernel
   CATEGORY:=Kernel
   DEFAULT:=y
   TITLE:=Virtual kernel package
-  VERSION:=$(subst -rc,_rc,$(LINUX_VERSION))~$(LINUX_VERMAGIC)-r$(LINUX_RELEASE)
-  URL:=https://www.kernel.org/
+  VERSION:=$(LINUX_VERSION)~$(LINUX_VERMAGIC)-r$(LINUX_RELEASE)
+  URL:=http://www.kernel.org/
   PKG_FLAGS:=nonshared
 endef
 

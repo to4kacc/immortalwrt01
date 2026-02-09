@@ -35,7 +35,7 @@ define Package/jansson
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=Jansson library
-  URL:=https://github.com/akheron/jansson
+  URL:=http://www.digip.org/jansson/
   ABI_VERSION:=4
 endef
 

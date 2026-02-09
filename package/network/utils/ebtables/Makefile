@@ -27,7 +27,7 @@ define Package/ebtables-legacy
   SUBMENU:=Firewall
   DEPENDS:=+kmod-ebtables
   TITLE:=Ethernet bridge firewall administration utility
-  URL:=https://ebtables.netfilter.org/
+  URL:=http://ebtables.sourceforge.net/
   PROVIDES:=ebtables
   ALTERNATIVES:=\
     200:/usr/sbin/ebtables:/usr/sbin/ebtables-legacy

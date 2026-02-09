@@ -44,6 +44,7 @@ function network_socket_close(data)
 	if (data.timer)
 		data.timer.cancel();
 	data.channel.disconnect();
+	data.socket.close();
 }
 
 function network_rx_cleanup_state(name)
@@ -306,8 +307,6 @@ function network_open_channel(net, name, peer)
 		if (!network_auth_valid(sock_data.name, sock_data.id, msg.token))
 			return;
 
-		if (sock_data.timer)
-			sock_data.timer.cancel();
 		sock_data.auth = true;
 		core.dbg(`Outgoing connection to ${name} established\n`);
 
@@ -345,20 +344,12 @@ function network_open_channel(net, name, peer)
 			data_cb: auth_data_cb,
 			cb: auth_cb,
 		});
-		sock_data.timer = uloop.timer(10 * 1000, () => {
-			network_tx_socket_close(sock_data);
-		});
 
 		return 0;
 	};
 
 	let disconnect_cb = (req) => {
 		let net = networks[sock_data.network];
-		if (!net) {
-			network_tx_socket_close(sock_data);
-			return;
-		}
-
 		let cur_data = net.tx_channels[sock_data.name];
 		if (cur_data == sock_data)
 			delete net.tx_channels[sock_data.name];

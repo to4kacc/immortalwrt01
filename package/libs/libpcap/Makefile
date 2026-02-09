@@ -35,7 +35,7 @@ define Package/libpcap
   SECTION:=libs
   CATEGORY:=Libraries
   TITLE:=Low-level packet capture library
-  URL:=https://www.tcpdump.org/
+  URL:=http://www.tcpdump.org/
   MENU:=1
   ABI_VERSION:=1
 endef
@@ -53,7 +53,7 @@ define Package/rpcapd
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Capture daemon to be controlled by a remote libpcap application
-  URL:=https://www.tcpdump.org/
+  URL:=http://www.tcpdump.org/
   DEPENDS+= +USE_GLIBC:libcrypt-compat +libpcap
 endef
 

@@ -182,7 +182,6 @@ void rtl930x_print_matrix(void);
 /* RTL931x-specific */
 irqreturn_t rtl931x_switch_irq(int irq, void *dev_id);
 void rtl931x_print_matrix(void);
-void rtldsa_931x_config_phy_ability_source(struct rtl838x_switch_priv *priv);
 
 int rtl83xx_lag_add(struct dsa_switch *ds, int group, int port, struct netdev_lag_upper_info *info);
 int rtl83xx_lag_del(struct dsa_switch *ds, int group, int port);
@@ -196,6 +195,7 @@ int rtl83xx_lag_del(struct dsa_switch *ds, int group, int port);
 void rtl838x_egress_rate_queue_limit(struct rtl838x_switch_priv *priv, int port,
 				     int queue, u32 rate);
 
+int rtl8390_sds_power(int mac, int val);
 void rtl839x_pie_rule_dump(struct  pie_rule *pr);
 void rtl839x_set_egress_queue(int port, int queue);
 

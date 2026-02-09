@@ -30,7 +30,7 @@ define Package/tcpdump/default
   CATEGORY:=Network
   DEPENDS:=+libpcap
   TITLE:=Network monitoring and data acquisition tool
-  URL:=https://www.tcpdump.org/
+  URL:=http://www.tcpdump.org/
 endef
 
 define Package/tcpdump
